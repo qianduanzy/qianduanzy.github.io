@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      228 字
+      842 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      10
        分钟
     </span>
   
@@ -245,6 +245,47 @@
 <li><p>提交数据的缺点：<br>会刷新页面，之前的数据和状态会消失<br>采取的方案：使用 ajax 发送请求，避免页面的刷新</p>
 <pre><code>    配合阻止表单的默认行为的方法：e.preventDefault()
 </code></pre>
+</li>
+<li><p>form 表单中的事件：<br>form.submit(function(e) {// 获取所有的表单参数 $(this).serialize() // 还原表单内容 this.reset()})       </p>
+<p>模板引擎</p>
+</li>
+<li><p>所有的数据，变量，表达式，都必须用 双花括号 来进行包裹</p>
+</li>
+<li><p>渲染原本的 html 标签 @value</p>
+</li>
+<li><p>根据条件输出模板 if </p>
+</li>
+<li><p>循环遍历输出模板 each </p>
+</li>
+<li><p>过滤器：<br>template.defaults.imports.方法名(foo) = function(参数) {}</p>
+<p>xhr 的新特性</p>
+</li>
+<li><p>设置请求超时的方法<br>xhr.timeout = 300<br>xhr.ontimeout = function() {}</p>
+</li>
+<li><p>使用 new FormData() 管理表单数据：<br>创建一个 formdata 数据 var fd = new FormData()<br>新增一条数据 fd.append(‘avatar’, ‘hello’)<br>遍历所有的数据 fd.forEach(fn)<br>设置某一条数据 fd.set(‘name’, ‘hello’)<br>一次性获取 form 表单中所有的内容 $(‘form’).serialize() 键值对字符串</p>
+<pre><code>                        var fd = new FormData($(&#39;form&#39;)[0]) 获取 formdata 类型的表单数据
+</code></pre>
+</li>
+<li><p>实现文件上传的步骤：<br>获取用户上传列表 ipt.files<br>判断是否上传 ipt.files.length == 0<br>使用 formdata 去提交文件 fd.append(‘avatar’, ipt.files[0])<br>发送 ajax 的四部曲 var xhr = new XMLHttpRequest()</p>
+<pre><code>           xhr.open(&#39;POST&#39;, url)
+           xhr.send(fd)
+</code></pre>
+<p>xhr.onreadystatechange=function(){}                               </p>
+</li>
+<li><p>如何监听文件上传的进度<br>xhr.upload.onprogress = function(e) {e.loaded(已经上传的)/e.total(总数量) * 100}<br>xhr.upload.onload = function(e) {// 已经上传完成的}<br>特点：基于 Promise 的 Http请求库，可以同时在浏览器和Node.js平台使用<br>发送 GET 请求 axios.get(url?name=tom&amp;age=10)<br>.then(res =&gt; {console.log(res)})<br>.catch(res =&gt; {console.log(err)})<br>发送 POST 请求<br>axios.post(url, {name: ‘tom’, age: 10})<br>.then(res =&gt; {console.log(res)})<br>.catch(res =&gt; {console.log(err)})<br>axios({url:url,method: ‘get/post’,// get 请求params: {}// post 请求data: {}})<br>.then(res =&gt; {console.log(res)})<br>.catch(res =&gt; {console.log(err)})<br>返回数据 res (包装后的数据对象)，res.data [服务器真是响应的数据内容]</p>
+<p>同源和跨域解决</p>
+</li>
+<li><p>同源的概念：两个 url 满足 协议，域名，端口号必须一致</p>
+</li>
+<li><p>同源策略：浏览器提供的一种安全策略，限制一个网站去放另一个网站的资源</p>
+</li>
+<li><p>跨域的原因：就是流浪器的同源策略</p>
+</li>
+<li><p>跨域的解决方案：<br>CORS 方案，服务端 的解决方案(在响应头中添加 Access-Content-Allow-Origin)<br>JSONP方案<br>代理服务器，前端本地开发(proxy 插件)<br>在流浪器中手动关闭同源策略</p>
+</li>
+<li><p>JSONP 的实现原理<br>利用 script 标签可以跨域的特性去请求资源</p>
+</li>
+<li><p>JQuery版本的JSONP实现：<br>核心： $.ajax({dataType: ‘jsonp’,jsonp: ‘cbk’,jsonpCallback: ‘foo’})</p>
 </li>
 </ol>
 
