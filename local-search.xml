@@ -31,7 +31,7 @@
   
   
   <entry>
-    <title>JS高级和Ajax</title>
+    <title>JS高级</title>
     <link href="/2021/02/07/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/"/>
     <url>/2021/02/07/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
     
@@ -58,27 +58,13 @@
   
   
   <entry>
-    <title>扬帆起航</title>
+    <title></title>
     <link href="/2021/01/28/hello-world/"/>
     <url>/2021/01/28/hello-world/</url>
     
-    <content type="html"><![CDATA[<h3 id="JS高级笔记"><a href="#JS高级笔记" class="headerlink" title="JS高级笔记"></a>JS高级笔记</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
-    <categories>
-      
-      <category>菜鸟</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>blog</tag>
-      
-      <tag>hello</tag>
-      
-    </tags>
     
   </entry>
   
