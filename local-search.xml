@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>npm</title>
+    <link href="/2021/02/21/npm%E5%91%BD%E4%BB%A4/"/>
+    <url>/2021/02/21/npm%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<p>下载一个指定的包<br>    <code>npm i 包的具体名称</code> </p><p>查看一个指定包<br>    <code>npm view 包的具体名称</code></p><p>下载指定版本的包<br>    <code>npm i 包的具体名称@版本号</code></p><p>快速创建包管理配置文件<br>    在项目的根目录下执行 <code>npm init -y</code> 命令</p><p>卸载指定的包<br>    执行 <code>npm uninstall 包名称</code></p><p>安装开发测试阶段用到的包<br>    执行命令 <code>npm i --save-dev 包名称@版本号</code> 或 <code>npm i -D 包名称@版本号</code></p><p>使用 nrm 切换源<br>    在任意目录下依次执行：<code>npm i -g nrm</code> ==&gt; <code>nrm ls</code> ==&gt;<code>nrm use taobao</code></p><p>使用一个把 markdown 格式的文档转成 html 格式文件的工具包<br>    1. 安装全局包： npm i -g i5ting_toc<br>    2. 使用全局命令： <code>i5ting_toc -f 要转换的md文件 index.html</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>菜鸟</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blog</tag>
+      
+      <tag>hello</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Ajax</title>
     <link href="/2021/02/07/Ajax%E7%AC%94%E8%AE%B0/"/>
     <url>/2021/02/07/Ajax%E7%AC%94%E8%AE%B0/</url>
@@ -58,13 +85,27 @@
   
   
   <entry>
-    <title></title>
+    <title>扬帆起航</title>
     <link href="/2021/01/28/hello-world/"/>
     <url>/2021/01/28/hello-world/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h3 id="JS高级笔记"><a href="#JS高级笔记" class="headerlink" title="JS高级笔记"></a>JS高级笔记</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>]]></content>
     
     
+    <categories>
+      
+      <category>菜鸟</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blog</tag>
+      
+      <tag>hello</tag>
+      
+    </tags>
     
   </entry>
   
