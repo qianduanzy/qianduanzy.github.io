@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>模块的加载机制</title>
+    <link href="/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    <url>/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<p>模块的加载机制</p><p>模块优先从缓存中进行加载</p><p>模块在第一次加载后会被缓存，如果每次调用 require(‘foo’) 都解析到同一文件，则返回相同的对象，不会导致模块的代码被执行多次</p><p>缓存的作用</p><p>不论是 node.js 内置的核心模块，用户自定义的模块还是第三方模块，都有对应的缓存策略，提升模块的加载效率</p><ol><li><p>核心模块的加载机制<br>require() 总是会优先加载核心模块，例如 require(‘http’) 始终返回内置的 HTTP 模块，即使有同名文件</p></li><li><p>自定义模块的加载机制</p><ul><li>使用 require() 方法加载自定义模块，必须使用 ‘/‘ 、 ‘../‘ 或 ‘./‘ 开头的路径，如果不添加路径标识，node 会默认把它当做是一个核心模块或来自 node_modules 目录下的第三方模块</li><li>如果按确切的文件名没有找到模块，则 node.js 会尝试带上 .js 、.json 或 .node 拓展名在加载</li><li>加载顺序遵从  在加载的目录下查找 package.json 的文件，并寻找 main 属性作为 require 的入口，上述找不到，node.js 会尝试带上 .js 、.json 或 .node 拓展名在加载</li></ul></li><li><p>第三方模块的加载机制<br>如果传递给 require() 的模块标识符不是一个核心模块，也没有以 ‘/‘ 、 ‘../‘ 或 ‘./‘ 开头， 那么 Node.js 会从当前模块的父目录开始，尝试从它的 /node_modules 目录里加载模块。如果还是没有找到，则移动到再上一层父目录，直到文件系统的根目录。</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>菜鸟</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blog</tag>
+      
+      <tag>hello</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>npm</title>
     <link href="/2021/02/21/npm%E5%91%BD%E4%BB%A4/"/>
     <url>/2021/02/21/npm%E5%91%BD%E4%BB%A4/</url>
