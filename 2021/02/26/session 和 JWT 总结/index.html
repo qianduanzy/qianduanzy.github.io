@@ -17,7 +17,7 @@
   <meta name="description" content="菜鸟教程">
   <meta name="author" content="ZY">
   <meta name="keywords" content="">
-  <title>SQL - ZY</title>
+  <title>ZY</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="SQL">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-24 20:55" pubdate>
-        2021年2月24日 晚上
+      <time datetime="2021-02-26 21:19" pubdate>
+        2021年2月26日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      125 字
+      392 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -224,32 +224,35 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SQL</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>查询语句<br>1.查询所有的数据<br>select * from users<br>2.查询指定列的数据<br>select username=’’, password=’’ from users<br>3.插入语句<br>insert into users (username, password) values (‘xm’, ‘123456’)<br>4.更新语句<br>例如：把表中 id 为4的用户名密码修改为abcdef<br>update users set password=’abcdef’ where id=4<br>5.删除语句<br>例如：把表中 id 为4的用户删除<br>delete from users where id=4<br>6.升序降序<br>例如：查询表中所有的用户根据 status 升序 id 降序排列<br>select * from users order by status asc, id desc</p>
+              <h4 id="session-总结"><a href="#session-总结" class="headerlink" title="session 总结"></a>session 总结</h4><ol>
+<li>session 工作机制</li>
+</ol>
+<p>浏览器发送登录请求(首次五 sessionID)，服务器生成 session，向浏览器响应数据并写入sid 数据到 cookie 中，浏览器自动保存 cookie，再次发送请求时，自动携带 cookie 信息，服务器根据 cookie 中的 sid 值获取对应的 session 数据，匹配成功后，对应的用户信息返回给浏览器，浏览器渲染到页面上</p>
+<ol start="2">
+<li>session 认证的局限性</li>
+</ol>
+<p>sessionID 需要借助 cookie 手段存放在浏览器，当涉及到前端跨域请求后端接口时，需要做额外的配置才能实现 session 的认证 ，推荐使用 JWT 这种认证方式，没有和 cookie 的绑定关系</p>
+<h4 id="JWT-总结"><a href="#JWT-总结" class="headerlink" title="JWT 总结"></a>JWT 总结</h4><ol>
+<li>jwt 的工作机制</li>
+</ol>
+<p>浏览器发送登录请求，服务器验证用户信息，把信息加密后生成 token 返回，浏览器存储 token 信息(一般存放到 localhost 本地存储中)，再次发送请求，在请求头的 Authorization 字段携带上了 token，服务器解密 token 信息，解密成功，对应的用户信息返回给浏览器，浏览器渲染到页面上</p>
+<ol start="2">
+<li>JWT 的组成部分</li>
+</ol>
+<p>通常由三部分组成，使用英文符号进行分隔， Header(头部)，Payload(有效荷载，存放的是经过加密后的用户信息)，Signature(签名)</p>
+<ol start="3">
+<li>JWT 使用方式</li>
+</ol>
+<p>服务端签发 token 到客户端中，可以存储到 localhost 中，每次发送请求前都要带上这个 token，推荐放在 HTTP 请求头的 Authorization 字段中</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E8%8F%9C%E9%B8%9F/">菜鸟</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/blog/">blog</a>
-                    
-                      <a class="hover-with-bg" href="/tags/hello/">hello</a>
-                    
-                  </div>
                 
               </div>
               
@@ -260,18 +263,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/26/session%20%E5%92%8C%20JWT%20%E6%80%BB%E7%BB%93/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/21/%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">
-                        <span class="hidden-mobile">模块的加载机制</span>
+                      <a href="/2021/02/24/sql%E8%AF%AD%E5%8F%A5/">
+                        <span class="hidden-mobile">SQL</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
