@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-26 21:19" pubdate>
-        2021年2月26日 晚上
+      <time datetime="2021-03-08 20:20" pubdate>
+        2021年3月8日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      392 字
+      541 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      7
        分钟
     </span>
   
@@ -227,26 +227,80 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h4 id="session-总结"><a href="#session-总结" class="headerlink" title="session 总结"></a>session 总结</h4><ol>
-<li>session 工作机制</li>
+              <h2 id="vue-介绍"><a href="#vue-介绍" class="headerlink" title="vue 介绍"></a>vue 介绍</h2><h4 id="vue-概述"><a href="#vue-概述" class="headerlink" title="vue 概述"></a>vue 概述</h4><ul>
+<li>特点：易用、灵活、高效</li>
+<li>版本：2.6</li>
+<li>作者：尤雨溪</li>
+<li>兼容：IE8及以下不兼容</li>
+</ul>
+<h4 id="vue使用方法"><a href="#vue使用方法" class="headerlink" title="vue使用方法"></a>vue使用方法</h4><ol>
+<li>引入 vue.js</li>
+<li>创建挂载节点标签<ul>
+<li>注意：不能再 body 和 html 标签上竞争挂载</li>
+</ul>
+</li>
+<li>实例化 vue 对象<ul>
+<li>el：挂载节点的选择器</li>
+<li>data：模板中用到的所有数据</li>
+</ul>
+</li>
 </ol>
-<p>浏览器发送登录请求(首次五 sessionID)，服务器生成 session，向浏览器响应数据并写入sid 数据到 cookie 中，浏览器自动保存 cookie，再次发送请求时，自动携带 cookie 信息，服务器根据 cookie 中的 sid 值获取对应的 session 数据，匹配成功后，对应的用户信息返回给浏览器，浏览器渲染到页面上</p>
-<ol start="2">
-<li>session 认证的局限性</li>
+<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><ul>
+<li>M model (data里面的数据)</li>
+<li>V view (视图，就是模板)</li>
+<li>VM (模拟模型)</li>
+</ul>
+<h2 id="vue-指令"><a href="#vue-指令" class="headerlink" title="vue 指令"></a>vue 指令</h2><ul>
+<li>v-html 渲染内容，可以编译 html 字符串</li>
+<li>v-text 渲染内容</li>
+<li>v-cloak 防止闪烁</li>
+<li>v-pre 跳过编译</li>
+<li>v-once 一次性绑定</li>
+<li>v-on 事件绑定</li>
+<li>v-bind 属性绑定</li>
+<li>v-model 双向数据绑定</li>
+</ul>
+<h2 id="vue-事件"><a href="#vue-事件" class="headerlink" title="vue 事件"></a>vue 事件</h2><h6 id="绑定"><a href="#绑定" class="headerlink" title="绑定"></a>绑定</h6><ol>
+<li><p>v-on：事件类型=’事件函数’</p>
+</li>
+<li><p>@事件类型=’事件函数’</p>
+</li>
 </ol>
-<p>sessionID 需要借助 cookie 手段存放在浏览器，当涉及到前端跨域请求后端接口时，需要做额外的配置才能实现 session 的认证 ，推荐使用 JWT 这种认证方式，没有和 cookie 的绑定关系</p>
-<h4 id="JWT-总结"><a href="#JWT-总结" class="headerlink" title="JWT 总结"></a>JWT 总结</h4><ol>
-<li>jwt 的工作机制</li>
-</ol>
-<p>浏览器发送登录请求，服务器验证用户信息，把信息加密后生成 token 返回，浏览器存储 token 信息(一般存放到 localhost 本地存储中)，再次发送请求，在请求头的 Authorization 字段携带上了 token，服务器解密 token 信息，解密成功，对应的用户信息返回给浏览器，浏览器渲染到页面上</p>
-<ol start="2">
-<li>JWT 的组成部分</li>
-</ol>
-<p>通常由三部分组成，使用英文符号进行分隔， Header(头部)，Payload(有效荷载，存放的是经过加密后的用户信息)，Signature(签名)</p>
-<ol start="3">
-<li>JWT 使用方式</li>
-</ol>
-<p>服务端签发 token 到客户端中，可以存储到 localhost 中，每次发送请求前都要带上这个 token，推荐放在 HTTP 请求头的 Authorization 字段中</p>
+<h6 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h6><p>​    @事件类型=’事件函数(实参)’</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>    el: <span class="hljs-string">&#x27;&#x27;</span>,<br>    data: &#123;<br>        <br>    &#125;,<br>    methods: &#123;<br>        事件函数(形参) &#123;<br>            <br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h6 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h6><p>​    @事件类型=’事件函数($event)’</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>    el: <span class="hljs-string">&#x27;&#x27;</span>,<br>    data: &#123;<br>        <br>    &#125;,<br>    methods: &#123;<br>        事件函数(形参) &#123;<br>            <span class="hljs-comment">// 形参就是事件对象</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h6 id="既传参又获取事件对象"><a href="#既传参又获取事件对象" class="headerlink" title="既传参又获取事件对象"></a>既传参又获取事件对象</h6><p>​    @事件类型=’事件函数($event，实参)’</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;<br>    el: <span class="hljs-string">&#x27;&#x27;</span>,<br>    data: &#123;<br>        <br>    &#125;,<br>    methods: &#123;<br>        事件函数(形参<span class="hljs-number">1</span>，形参<span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-comment">// 形参1就是事件对象</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h6 id="事件简写"><a href="#事件简写" class="headerlink" title="事件简写"></a>事件简写</h6><p>​    @事件类型=’变量赋值操作’</p>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h4><h6 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h6><p>​        @事件类型.修饰符=’事件函数’</p>
+<h6 id="修饰符内容"><a href="#修饰符内容" class="headerlink" title="修饰符内容"></a>修饰符内容</h6><ul>
+<li><p>.stop</p>
+</li>
+<li><p>.prevent</p>
+</li>
+<li><p>.self</p>
+</li>
+<li><p>.capture</p>
+</li>
+<li><p>.once</p>
+<h6 id="按键修饰符-一般用于-input-和-textarea"><a href="#按键修饰符-一般用于-input-和-textarea" class="headerlink" title="按键修饰符(一般用于 input 和 textarea)"></a>按键修饰符(一般用于 input 和 textarea)</h6><ul>
+<li>keydown</li>
+<li>keyup</li>
+<li>keypress</li>
+<li>input</li>
+</ul>
+</li>
+</ul>
+<h2 id="vue-样式"><a href="#vue-样式" class="headerlink" title="vue 样式"></a>vue 样式</h2><h4 id="class"><a href="#class" class="headerlink" title="class"></a>class</h4><h6 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h6><p>​        ：class=’{class名1：变量1，class名2：变量2}’</p>
+<h6 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h6><p>​        ：class=’[变量1，变量2，’class名1’，’class名2’]’</p>
+<h6 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h6><p>​        ：class=’条件？’class名1’：’class名2’’</p>
+<h4 id="style"><a href="#style" class="headerlink" title="style"></a>style</h4><h6 id="对象-1"><a href="#对象-1" class="headerlink" title="对象"></a>对象</h6><p>​        ：style=’{css属性名1：变量1，css属性名2：变量2}’</p>
+<h6 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h6><p>​        ：style=’[变量1，变量2]’</p>
+<p>​                变量1：{css属性名1：css属性值1}</p>
+<p>​                变量2：{css属性名2：css属性值2}</p>
+<h6 id="属性绑定-1"><a href="#属性绑定-1" class="headerlink" title="属性绑定"></a>属性绑定</h6><p>​        <strong>字符串拼接和模板字符串</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;h3 :style=<span class="hljs-string">&quot;&#x27;background-color:&#x27;+bgc+&#x27;;font-size: &#x27;+num+&#x27;px;&#x27;&quot;</span>&gt;会呵呵呵呵&lt;/h3&gt;<br>    &lt;h3 :style=<span class="hljs-string">&quot;`background-color:$&#123;bgc&#125;;font-size:$&#123;num&#125;px;`&quot;</span>&gt;会呵呵呵呵&lt;/h3&gt;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -263,18 +317,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/08/Vue%E5%9F%BA%E7%A1%80-01%E7%AC%94%E8%AE%B0/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/24/sql%E8%AF%AD%E5%8F%A5/">
-                        <span class="hidden-mobile">SQL</span>
+                      <a href="/2021/02/26/session%20%E5%92%8C%20JWT%20%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
